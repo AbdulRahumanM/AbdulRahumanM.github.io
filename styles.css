@@ -114,8 +114,10 @@ a { color: inherit; }
 }
 
 section { padding: 96px 0; }
+#impact { padding-top: 48px; }
 @media (max-width: 640px) {
   section { padding: 64px 0; }
+  #impact { padding-top: 32px; }
 }
 
 .eyebrow {
@@ -217,7 +219,7 @@ p { color: var(--text-secondary); }
 /* ---------------------------------------------------------
    Hero
 --------------------------------------------------------- */
-.hero { padding: 88px 0 72px; }
+.hero { padding: 88px 0 32px; }
 .hero-kicker {
   display: inline-flex;
   align-items: center;
@@ -229,6 +231,11 @@ p { color: var(--text-secondary); }
   padding: 6px 12px;
   border-radius: 100px;
   margin-bottom: 24px;
+}
+.hero-greeting {
+  font-size: 17px;
+  color: var(--text-secondary);
+  margin: 0 0 8px;
 }
 .hero h1 {
   font-size: clamp(34px, 5.4vw, 56px);
