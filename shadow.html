@@ -44,7 +44,7 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 @media (max-width: 640px) { .hero { padding-top: 40px; } }
 .hero-bio {
   display: flex; gap: 16px; align-items: flex-start;
-  max-width: 660px; margin: 0 0 28px;
+  max-width: 660px; margin: 24px 0 0;
 }
 .hero-bio img {
   width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex: none;
@@ -52,13 +52,17 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 }
 .hero-bio p { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--text-secondary); }
 .hero-bio p + p { margin-top: 8px; }
-.hero-bio strong { color: var(--text-primary); font-weight: 650; }
+.hero-bio strong { color: var(--text-primary); font-weight: 600; }
 .hero-bio a { color: var(--series-blue); font-weight: 600; }
-.btn-secondary:hover { background: var(--surface-1); }
+.cta-block { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 32px; }
+.cta-alt { font-size: 15px; font-weight: 600; color: var(--series-blue); text-underline-offset: .2em; }
+.cta-repeat { margin-top: 32px; }
+.nav-book { white-space: nowrap; }
+@media (max-width: 380px) { .nav-book { padding: 6px 12px; } }
 .hero-bio .bio-links { font-size: 14px; }
 
 /* FAQ */
-.faq-head { font-size: 22px; margin: 0 0 16px; }
+.faq-head { font-size: 26px; margin: 0 0 16px; }
 .faq-list { max-width: 760px; display: grid; gap: 10px; }
 .faq-list details { border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface-1); }
 .faq-list summary { cursor: pointer; padding: 14px 18px; font-size: 16px; font-weight: 600; color: var(--text-primary); }
@@ -67,9 +71,9 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 summary:focus-visible { outline: 3px solid var(--series-blue); outline-offset: 3px; border-radius: 6px; }
 
 /* Short blocks */
-.blocks { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-@media (max-width: 760px) { .blocks { grid-template-columns: 1fr; } }
-.impact-card h2 { font-size: 19px; margin: 0 0 10px; }
+.blocks { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 760px; }
+.impact-card h2 { font-size: 26px; margin: 0 0 10px; }
+@media (max-width: 640px) { .impact-card h2, .faq-head { font-size: 24px; } }
 .impact-card p { font-size: 15.5px; line-height: 1.6; }
 .impact-card p + p { margin-top: 10px; }
 .impact-card a { color: var(--series-blue); font-weight: 600; }
@@ -95,13 +99,16 @@ section.short { padding: 48px 0; border-top: 1px solid var(--border); }
     <div style="display:flex; align-items:center; gap:24px;">
       <a href="https://abdulrahuman.com" class="nav-name">Abdul (Sydney)</a>
       <ul class="nav-links" id="navLinks">
+        <li><a href="#who">Who</a></li>
         <li><a href="#involved">What&rsquo;s involved</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="/shadow/privacy/">Privacy</a></li>
+        <li><a href="#why">Why</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#faq">Questions</a></li>
         <li><a href="https://abdulrahuman.com">abdulrahuman.com</a></li>
       </ul>
     </div>
     <div style="display:flex; align-items:center; gap:10px;">
+      <a href="https://cal.com/abdul-rahuman/dietitian-research" class="nav-cta nav-book">Book</a>
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
         <svg id="themeIconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
         <svg id="themeIconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
@@ -118,6 +125,7 @@ section.short { padding: 48px 0; border-top: 1px solid var(--border); }
   <header class="hero">
     <div class="wrap">
       <span class="hero-kicker">A conversation about how dietitians work</span>
+      <h1>I&rsquo;d like to learn how your work as a dietitian actually runs.</h1>
       <div class="hero-bio">
         <img src="/assets/shadow-headshot.jpg" alt="Portrait of Abdul" width="64" height="64">
         <div>
@@ -126,35 +134,41 @@ section.short { padding: 48px 0; border-top: 1px solid var(--border); }
           <p class="bio-links"><a href="https://abdulrahuman.com">abdulrahuman.com</a> <span aria-hidden="true">&middot;</span> <a href="https://linkedin.com/in/MAbdulRahuman">LinkedIn</a></p>
         </div>
       </div>
-      <h1>I&rsquo;d like to learn how your work as a dietitian actually runs.</h1>
       <p class="lede">You&rsquo;re the expert in your own work; I&rsquo;m here to learn, not to pitch. We can meet at your practice in Sydney, over video from anywhere in Australia, or in a quiet gap in the day.</p>
-      <div class="hero-actions">
+      <div class="cta-block" id="book">
         <a href="https://cal.com/abdul-rahuman/dietitian-research" class="btn btn-primary">Book a conversation of about 30&ndash;45 minutes</a>
-        <a href="https://cal.com/abdul-rahuman/intro-with-abdul" class="btn btn-secondary">Prefer a 15-minute intro call first?</a>
+        <a href="https://cal.com/abdul-rahuman/intro-with-abdul" class="cta-alt">Prefer a 15-minute intro call first?</a>
       </div>
     </div>
   </header>
 
-  <section id="involved" class="short">
+  <section id="details" class="short" aria-label="Details">
     <div class="wrap">
       <div class="blocks reveal">
-        <div class="impact-card">
+        <div class="impact-card" id="who">
+          <h2>Who it&rsquo;s for</h2>
+          <p>Practice owners and employed dietitians, including new graduates, in private practice, hospital, aged care and NDIS, anywhere in Australia. Sydney and NSW first.</p>
+        </div>
+        <div class="impact-card" id="involved">
           <h2>What&rsquo;s involved</h2>
           <p>A 30&ndash;45 minute conversation, around your day: in person in Sydney, or by video from anywhere in Australia. Optional 2&ndash;4 hour shadowing, only with practice or workplace permission and patient consent if a patient could be observed. Saying no is fine.</p>
         </div>
-        <div class="impact-card">
-          <h2>Who it&rsquo;s for, and what you get</h2>
-          <p>Practice owners and employed dietitians, including new graduates, in private practice, hospital, aged care and NDIS, anywhere in Australia. Sydney and NSW first.</p>
+        <div class="impact-card" id="get">
+          <h2>What you get</h2>
           <p>You get an early copy of the findings summary, so you can see how your peers work. Your experience shapes whether anything gets built for dietitians, and what. Nothing to buy.</p>
         </div>
-        <div class="impact-card">
+        <div class="impact-card" id="why">
           <h2>Why are you doing this?</h2>
           <p>I saw what changed for dietitians in the US when the tools fitted their day. Before deciding whether anything like that is worth building in Australia, I want to understand how the work actually runs here. Sometimes the right answer is to build nothing. Your experience is what that decision should rest on.</p>
         </div>
-        <div class="impact-card">
+        <div class="impact-card" id="privacy">
           <h2>Privacy</h2>
           <p>Australian Privacy Principles apply. Recording only if you opt in. No patient-identifiable information. <a href="/shadow/privacy/">Read the full privacy note</a>.</p>
         </div>
+      </div>
+      <div class="cta-block cta-repeat">
+        <a href="https://cal.com/abdul-rahuman/dietitian-research" class="btn btn-primary">Book a conversation of about 30&ndash;45 minutes</a>
+        <a href="https://cal.com/abdul-rahuman/intro-with-abdul" class="cta-alt">Prefer a 15-minute intro call first?</a>
       </div>
     </div>
   </section>
@@ -185,7 +199,7 @@ section.short { padding: 48px 0; border-top: 1px solid var(--border); }
         </details>
         <details>
           <summary>What happens to my notes?</summary>
-          <p>Identifying details are removed within 30 days, and de-identified notes are deleted after 180 days. <a href="/shadow/privacy/">Read the full privacy note</a>.</p>
+          <p>Identifying details are removed within 30 days, and de-identified notes are deleted after 2 years. <a href="/shadow/privacy/">Read the full privacy note</a>.</p>
         </details>
       </div>
     </div>
