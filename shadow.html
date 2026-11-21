@@ -59,7 +59,7 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 .cta-repeat { margin-top: 32px; }
 .nav-book { white-space: nowrap; }
 @media (max-width: 380px) { .nav-book { padding: 6px 12px; } }
-.hero-bio .bio-links { font-size: 14px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
 /* FAQ */
 .faq-head { font-size: 26px; margin: 0 0 16px; }
@@ -104,7 +104,8 @@ section.short { padding: 48px 0; border-top: 1px solid var(--border); }
         <li><a href="#why">Why</a></li>
         <li><a href="#privacy">Privacy</a></li>
         <li><a href="#faq">Questions</a></li>
-        <li><a href="https://abdulrahuman.com">abdulrahuman.com</a></li>
+        <li><a href="https://abdulrahuman.com" target="_blank" rel="noopener">abdulrahuman.com<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a href="https://linkedin.com/in/MAbdulRahuman" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></li>
       </ul>
     </div>
     <div style="display:flex; align-items:center; gap:10px;">
@@ -131,7 +132,6 @@ section.short { padding: 48px 0; border-top: 1px solid var(--border); }
         <div>
           <p><strong>Hi, I&rsquo;m Abdul, a product leader now living in Sydney.</strong> For seven years at Twin Health in the US, I built AI tools, CGM and wearable experiences, and the app members used every day, side by side with the dietitians and clinicians on our care teams.</p>
           <p>Together we changed how those dietitians went about their day. Our work gave them back 300+ hours a month, so each could support more people with truly individualised care. Now I want to understand how dietitians here work. This research is my own.</p>
-          <p class="bio-links"><a href="https://abdulrahuman.com">abdulrahuman.com</a> <span aria-hidden="true">&middot;</span> <a href="https://linkedin.com/in/MAbdulRahuman">LinkedIn</a></p>
         </div>
       </div>
       <p class="lede">You&rsquo;re the expert in your own work; I&rsquo;m here to learn, not to pitch. We can meet at your practice in Sydney, over video from anywhere in Australia, or in a quiet gap in the day.</p>
@@ -177,6 +177,10 @@ section.short { padding: 48px 0; border-top: 1px solid var(--border); }
     <div class="wrap">
       <h2 id="faq-h" class="faq-head">Questions</h2>
       <div class="faq-list">
+        <details>
+          <summary>Who are you?</summary>
+          <p>I&rsquo;m a product leader who spent seven years at Twin Health in the US, building AI tools and CGM and wearable experiences side by side with dietitians and clinicians. I now live in Sydney. This research is my own, and I&rsquo;m not selling anything. More about me: <a href="https://abdulrahuman.com" target="_blank" rel="noopener">abdulrahuman.com<span class="sr-only"> (opens in a new tab)</span></a> and <a href="https://linkedin.com/in/MAbdulRahuman" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>.</p>
+        </details>
         <details>
           <summary>Do I have to agree to shadowing?</summary>
           <p>No. The conversation is the main invitation. Shadowing is optional, later, and only if your workplace can approve it.</p>
