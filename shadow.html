@@ -14,9 +14,11 @@ permalink: /shadow/
 <meta property="og:locale" content="en_AU">
 <meta property="og:title" content="A conversation about how dietitians work &mdash; Abdul (Sydney)">
 <meta property="og:description" content="Abdul, in Sydney, is learning how Accredited Practising Dietitians actually work. A conversation of about 30–45 minutes, and optional later shadowing of 2–4 hours. You’re the expert; he is here to learn.">
-<meta property="og:image" content="https://abdulrahuman.com/assets/shadow-headshot.jpg">
-<meta property="og:image:alt" content="Portrait of Abdul">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://abdulrahuman.com/assets/shadow-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="For Australian dietitians: I’d love to hear how your day really runs. A conversation with Abdul, Sydney.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%232a78d6%27/%3E%3Ctext%20x%3D%2716%27%20y%3D%2723%27%20font-family%3D%27system-ui%2C-apple-system%2CSegoe%20UI%2Csans-serif%27%20font-size%3D%2717%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%3EAR%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="/styles.css">
 <style>
@@ -54,6 +56,11 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 .hero-bio p + p { margin-top: 8px; }
 .hero-bio strong { color: var(--text-primary); font-weight: 600; }
 .hero-bio a { color: var(--series-blue); font-weight: 600; }
+/* Plain small-caps kicker on this page */
+.hero .hero-kicker { background: none; padding: 0; border-radius: 0; color: var(--series-blue); text-transform: uppercase; letter-spacing: 0.08em; font-size: 12.5px; margin-bottom: 16px; }
+.fact-row { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 0; font-size: 13.5px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.fact-row li + li::before { content: "\00B7"; padding: 0 8px; }
+.reassure { margin: 0; font-size: 13.5px; color: var(--text-muted); }
 .cta-block { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 32px; }
 .cta-alt { font-size: 15px; font-weight: 600; color: var(--series-blue); text-underline-offset: .2em; }
 .cta-repeat { margin-top: 32px; }
@@ -65,7 +72,11 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 .faq-head { font-size: 26px; margin: 0 0 16px; }
 .faq-list { max-width: 760px; display: grid; gap: 10px; }
 .faq-list details { border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface-1); }
-.faq-list summary { cursor: pointer; padding: 14px 18px; font-size: 16px; font-weight: 600; color: var(--text-primary); }
+.faq-list summary { cursor: pointer; padding: 14px 44px 14px 18px; font-size: 16px; font-weight: 600; color: var(--text-primary); list-style: none; position: relative; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: ""; position: absolute; right: 20px; top: 50%; width: 8px; height: 8px; border-right: 2px solid var(--text-muted); border-bottom: 2px solid var(--text-muted); transform: translateY(-70%) rotate(45deg); transition: transform .2s ease; }
+.faq-list details[open] > summary::after { transform: translateY(-30%) rotate(-135deg); }
+@media (prefers-reduced-motion: reduce) { .faq-list summary::after { transition: none; } }
 .faq-list details > p { margin: 0; padding: 0 18px 16px; font-size: 15.5px; line-height: 1.6; }
 .faq-list a { color: var(--series-blue); font-weight: 600; }
 summary:focus-visible { outline: 3px solid var(--series-blue); outline-offset: 3px; border-radius: 6px; }
@@ -125,18 +136,24 @@ section.short { padding: 48px 0; border-top: 1px solid var(--border); }
 
   <header class="hero">
     <div class="wrap">
-      <span class="hero-kicker">A conversation about how dietitians work</span>
-      <h1>I&rsquo;d like to learn how your work as a dietitian actually runs.</h1>
+      <span class="hero-kicker">For Australian dietitians</span>
+      <h1>I&rsquo;d love to hear how your day really runs.</h1>
       <div class="hero-bio">
         <img src="/assets/shadow-headshot.jpg" alt="Portrait of Abdul" width="64" height="64">
         <div>
           <p><strong>Hi, I&rsquo;m Abdul, a product leader now living in Sydney.</strong> For seven years at Twin Health in the US, I built AI tools, CGM and wearable experiences, and the app members used every day, side by side with the dietitians and clinicians on our care teams.</p>
           <p>Together we changed how those dietitians went about their day. Our work gave them back 300+ hours a month, so each could support more people with truly individualised care. Now I want to understand how dietitians here work. This research is my own.</p>
+          <ul class="fact-row" aria-label="Background">
+            <li>7 years at Twin Health</li>
+            <li>100K members</li>
+            <li>300+ hours a month back for dietitians</li>
+          </ul>
         </div>
       </div>
       <p class="lede">You&rsquo;re the expert in your own work; I&rsquo;m here to learn, not to pitch. We can meet at your practice in Sydney, over video from anywhere in Australia, or in a quiet gap in the day.</p>
       <div class="cta-block" id="book">
         <a href="https://cal.com/abdul-rahuman/dietitian-research" class="btn btn-primary">Book a conversation of about 30&ndash;45 minutes</a>
+        <p class="reassure">30&ndash;45 min <span aria-hidden="true">&middot;</span> Video or in person <span aria-hidden="true">&middot;</span> Recording only if you opt in <span aria-hidden="true">&middot;</span> Nothing to buy</p>
         <a href="https://cal.com/abdul-rahuman/intro-with-abdul" class="cta-alt">Prefer a 15-minute intro call first?</a>
       </div>
     </div>
