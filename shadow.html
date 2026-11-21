@@ -33,6 +33,8 @@ permalink: /shadow/
 .skip-link:focus { top: 12px; }
 a:focus-visible, button:focus-visible { outline: 3px solid var(--series-blue); outline-offset: 3px; border-radius: 6px; }
 main:focus { outline: none; }
+/* Keep anchor targets clear of the sticky nav */
+[id] { scroll-margin-top: 72px; }
 @media (max-width: 640px) { .wrap { padding: 0 16px; } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
