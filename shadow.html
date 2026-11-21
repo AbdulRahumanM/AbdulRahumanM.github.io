@@ -89,6 +89,23 @@ summary:focus-visible { outline: 3px solid var(--series-blue); outline-offset: 3
 .impact-card p + p { margin-top: 10px; }
 .impact-card a { color: var(--series-blue); font-weight: 600; }
 section.short { padding: 48px 0; border-top: 1px solid var(--border); }
+
+/* Editorial rows instead of stacked cards */
+#details .blocks { max-width: 920px; gap: 0; }
+#details .impact-card { background: none; border: 0; border-radius: 0; padding: 28px 0; border-top: 1px solid var(--border); }
+#details .impact-card:first-child { border-top: 0; padding-top: 8px; }
+#details .impact-card h2, .faq-head { font-size: 24px; line-height: 1.25; }
+#details .impact-card p { font-size: 16.5px; line-height: 1.65; max-width: 600px; }
+@media (min-width: 760px) {
+  #details .impact-card { display: grid; grid-template-columns: 260px 1fr; column-gap: 40px; align-items: baseline; }
+  #details .impact-card h2 { margin: 0; font-size: 22px; }
+}
+.faq-list { gap: 0; }
+.faq-list details { border: 0; border-radius: 0; background: none; border-top: 1px solid var(--border); }
+.faq-list details:last-child { border-bottom: 1px solid var(--border); }
+.faq-list summary { padding: 18px 40px 18px 0; }
+.faq-list summary::after { right: 6px; }
+.faq-list details > p { padding: 0 0 20px; max-width: 640px; }
 @media (max-width: 640px) { section.short { padding: 36px 0; } }
 
 /* Footer */
