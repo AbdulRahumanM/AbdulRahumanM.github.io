@@ -19,8 +19,31 @@
 <meta name="twitter:image" content="https://abdulrahuman.com/assets/og-image.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%232a78d6%27/%3E%3Ctext%20x%3D%2716%27%20y%3D%2723%27%20font-family%3D%27system-ui%2C-apple-system%2CSegoe%20UI%2Csans-serif%27%20font-size%3D%2717%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%3EAR%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
+<style>
+/* Slim, always-on banner pointing Australian dietitians to /shadow/ */
+.dietitian-banner { background: color-mix(in srgb, var(--series-blue) 7%, var(--page-plane)); border-bottom: 1px solid var(--border); }
+.dietitian-banner a { display: block; padding: 8px 0; font-size: 13.5px; line-height: 1.4; color: var(--text-secondary); text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dietitian-banner a:hover .db-more, .dietitian-banner a:focus-visible .db-more { text-decoration: underline; }
+.dietitian-banner a:focus-visible { outline: 2px solid var(--series-blue); outline-offset: -2px; }
+.dietitian-banner strong { color: var(--text-primary); font-weight: 600; }
+.dietitian-banner .db-more { color: var(--series-blue); font-weight: 600; white-space: nowrap; }
+.dietitian-banner .db-short { display: none; }
+@media (max-width: 1000px) { .dietitian-banner .db-long { display: none; } .dietitian-banner .db-short { display: inline; } }
+@media (max-width: 560px) { .dietitian-banner a { font-size: 13px; } .dietitian-banner .db-more-text { display: none; } }
+@media (max-width: 640px) { .dietitian-banner .wrap { padding: 0 16px; } }
+@media (max-width: 350px) { .dietitian-banner a { font-size: 12px; } }
+</style>
 </head>
 <body>
+
+<aside class="dietitian-banner" aria-label="For Australian dietitians">
+  <div class="wrap">
+    <a href="/shadow/?ref=home-banner" data-goatcounter-click="home-banner" data-goatcounter-title="Dietitian banner (homepage)">
+      <span class="db-long"><strong>Are you an Australian dietitian?</strong> I&rsquo;m learning how dietitians work day to day, and I&rsquo;d love to hear from you.</span><span class="db-short"><strong>Australian dietitian?</strong> I&rsquo;d love to hear from you.</span>
+      <span class="db-more"><span class="db-more-text">Find out more&nbsp;</span>&rarr;</span>
+    </a>
+  </div>
+</aside>
 
 <nav class="site-nav">
   <div class="wrap">
